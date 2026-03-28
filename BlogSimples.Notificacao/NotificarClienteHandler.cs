@@ -21,6 +21,6 @@ public class NotificarClienteHandler(
 
         await hubContext.Clients.All.ReceberNotificacao(notificacao);
 
-        logger.LogInformation("Notificação enviada para todos: {Titulo}", notificacao.Titulo);
+        logger.LogInformation("Notificação enviada: {Titulo}", notificacao.Titulo);
     }
 }
