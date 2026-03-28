@@ -1,0 +1,28 @@
+<Solution>
+  <Folder Name="/Src/" />
+  <Folder Name="/Src/Api/">
+    <Project Path="BlogSimples.Api/BlogSimples.Api.csproj" />
+  </Folder>
+  <Folder Name="/Src/Common/">
+    <Project Path="BlogSimples.Common/BlogSimples.Common.csproj" />
+  </Folder>
+  <Folder Name="/Src/IoC/">
+    <Project Path="BlogSimples.IoC/BlogSimples.IoC.csproj" />
+  </Folder>
+  <Folder Name="/Src/Modulos/" />
+  <Folder Name="/Src/Modulos/Autenticacao/">
+    <Project Path="BlogSimples.Autenticacao.Application/BlogSimples.Autenticacao.Application.csproj" />
+    <Project Path="BlogSimples.Autenticacao.Domain/BlogSimples.Autenticacao.Domain.csproj" />
+    <Project Path="BlogSimples.Autenticacao.Infrastructure/BlogSimples.Autenticacao.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/Src/Modulos/Gerenciamento de postagem/">
+    <Project Path="BlogSimples.Postagem.Application/BlogSimples.Postagem.Application.csproj" Id="87a61ec1-eb16-4de4-a53e-e1637f8703db" />
+    <Project Path="BlogSimples.Postagem.Domain/BlogSimples.Postagem.Domain.csproj" Id="91e82081-1c7f-42d9-ae3b-53a227412aad" />
+    <Project Path="BlogSimples.Postagem.Infrastructure/BlogSimples.Postagem.Infrastructure.csproj" Id="33f38029-8806-42c5-bc15-e583f955366b" />
+  </Folder>
+  <Folder Name="/Src/Modulos/Notificação/" />
+  <Folder Name="/Tests/">
+    <Project Path="BlogSimples.Autenticacao.Application.Tests/BlogSimples.Autenticacao.Application.Tests.csproj" Id="bd0b0215-722b-4198-8146-8529f94d673b" />
+    <Project Path="BlogSimples.Postagem.Application.Tests/BlogSimples.Postagem.Application.Tests.csproj" Id="2e263f8a-8e02-4f06-bd22-00cd32abb501" />
+  </Folder>
+</Solution>
