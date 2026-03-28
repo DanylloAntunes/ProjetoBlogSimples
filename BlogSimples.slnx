@@ -20,7 +20,9 @@
     <Project Path="BlogSimples.Postagem.Domain/BlogSimples.Postagem.Domain.csproj" Id="91e82081-1c7f-42d9-ae3b-53a227412aad" />
     <Project Path="BlogSimples.Postagem.Infrastructure/BlogSimples.Postagem.Infrastructure.csproj" Id="33f38029-8806-42c5-bc15-e583f955366b" />
   </Folder>
-  <Folder Name="/Src/Modulos/Notificação/" />
+  <Folder Name="/Src/Modulos/Notificação/">
+    <Project Path="BlogSimples.Notificacao/BlogSimples.Notificacao.Server.csproj" Id="8e8c6b9a-f80e-46f9-8cb1-63a541729e67" />
+  </Folder>
   <Folder Name="/Tests/">
     <Project Path="BlogSimples.Autenticacao.Application.Tests/BlogSimples.Autenticacao.Application.Tests.csproj" Id="bd0b0215-722b-4198-8146-8529f94d673b" />
     <Project Path="BlogSimples.Postagem.Application.Tests/BlogSimples.Postagem.Application.Tests.csproj" Id="2e263f8a-8e02-4f06-bd22-00cd32abb501" />

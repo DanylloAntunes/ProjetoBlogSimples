@@ -1,7 +1,9 @@
 ﻿using BlogSimples.Autenticacao.Application.IoC;
 using BlogSimples.Autenticacao.Infrastructure.IoC;
+using BlogSimples.Notificacao.Server.IoC;
 using BlogSimples.Postagem.Application.IoC;
 using BlogSimples.Postagem.Infrastructure.IoC;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -18,6 +20,15 @@ public static class InjecaoDependenciaExtension
         services.AddPostagemApplication();
         services.AddPostagemInfrastructure(configuration);
 
+        services.AddNotificacao();
+
         return services;
+    }
+
+    public static WebApplication UseInfrastructure(this WebApplication app)
+    {
+        app.MapSignalRNotificacao(); 
+
+        return app;
     }
 }

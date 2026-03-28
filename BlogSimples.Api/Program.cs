@@ -42,6 +42,8 @@ app.MapEndpointsUsuario();
 app.MapEndpointsAutenticar();
 app.MapEndpointsPostagem();
 
+app.UseInfrastructure();
+
 await app.RunAsync();
 
 public partial class Program { }

@@ -5,7 +5,7 @@ namespace BlogSimples.Postagem.Domain;
 
 public class Postagem
 {
-    public string Id { get; private set; }
+    public string Id { get; private set; } = string.Empty;
     public string Titulo { get; private set; } = string.Empty;
     public string Conteudo { get; private set; } = string.Empty;
     public Guid AutorId { get; private set; }

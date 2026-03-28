@@ -3,6 +3,6 @@
 public record PaginadoResponse<T>(
     IEnumerable<T> Items,
     DateTime? UltimaDataCriacao,
-    string UltimoId,
+    string? UltimoId,
     bool PossuiProximaPagina
 );

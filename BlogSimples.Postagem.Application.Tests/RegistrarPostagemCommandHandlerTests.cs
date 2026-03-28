@@ -2,6 +2,7 @@
 using BlogSimples.Postagem.Application.Interfaces;
 using ErrorOr;
 using FluentAssertions;
+using MediatR;
 using NSubstitute;
 
 namespace BlogSimples.Postagem.Application.Tests;
@@ -19,7 +20,7 @@ public class RegistrarPostagemCommandHandlerTests
     public RegistrarPostagemCommandHandlerTests()
     {
         _postagemRepository = Substitute.For<IPostagemRepository>();
-        _handler = new RegistrarPostagemCommandHandler(_postagemRepository);
+        _handler = new RegistrarPostagemCommandHandler(_postagemRepository, Substitute.For<IMediator>());
     }
 
     private static RegistrarPostagemCommand CriarCommand(
@@ -29,7 +30,8 @@ public class RegistrarPostagemCommandHandlerTests
         => new(
             Titulo: titulo ?? TituloValido,
             Conteudo: conteudo ?? ConteudoValido,
-            IdUsuarioLogado: idUsuarioLogado ?? IdUsuarioLogado);
+            IdUsuarioLogado: idUsuarioLogado ?? IdUsuarioLogado,
+            NomeUsuario: "Teste");
 
     [Fact]
     public async Task Handle_RepositorioRetornaVazio_DeveRetornarFailure()

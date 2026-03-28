@@ -52,7 +52,7 @@ public static class PostagemEndpoint
             [FromBody] RegistrarPostagemRequest registrarPostagemRequest,
             ClaimsPrincipal claimsPrincipal)
     {
-        var usuarioId = claimsPrincipal.GetUserId();
+        var usuarioId = claimsPrincipal.ObterIdUsuario();
 
         if (usuarioId is null)
             return Results.Unauthorized();
@@ -60,7 +60,8 @@ public static class PostagemEndpoint
         var command = new RegistrarPostagemCommand(
             registrarPostagemRequest.Titulo,
             registrarPostagemRequest.Conteudo,
-            usuarioId.Value
+            usuarioId.Value,
+            claimsPrincipal.ObterNomeUsuario()
         );
 
         var result = await mediator.Send(command);
@@ -73,7 +74,7 @@ public static class PostagemEndpoint
         [FromBody] AlterarPostagemRequest postagemRequest,
         ClaimsPrincipal claimsPrincipal)
     {
-        var usuarioId = claimsPrincipal.GetUserId();
+        var usuarioId = claimsPrincipal.ObterIdUsuario();
 
         if (usuarioId is null)
             return Results.Unauthorized();
@@ -95,7 +96,7 @@ public static class PostagemEndpoint
         [FromBody] ExcluirPostagemRequest postagemRequest,
         ClaimsPrincipal claimsPrincipal)
     {
-        var usuarioId = claimsPrincipal.GetUserId();
+        var usuarioId = claimsPrincipal.ObterIdUsuario();
 
         if (usuarioId is null)
             return Results.Unauthorized();

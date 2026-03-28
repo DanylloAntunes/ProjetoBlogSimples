@@ -14,6 +14,7 @@
     <ProjectReference Include="..\BlogSimples.Autenticacao.Application\BlogSimples.Autenticacao.Application.csproj" />
     <ProjectReference Include="..\BlogSimples.Autenticacao.Infrastructure\BlogSimples.Autenticacao.Infrastructure.csproj" />
     <ProjectReference Include="..\BlogSimples.Common\BlogSimples.Common.csproj" />
+    <ProjectReference Include="..\BlogSimples.Notificacao\BlogSimples.Notificacao.Server.csproj" />
     <ProjectReference Include="..\BlogSimples.Postagem.Application\BlogSimples.Postagem.Application.csproj" />
     <ProjectReference Include="..\BlogSimples.Postagem.Infrastructure\BlogSimples.Postagem.Infrastructure.csproj" />
   </ItemGroup>

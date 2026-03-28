@@ -29,3 +29,8 @@
 /BlogSimples.Postagem.Domain/obj
 /BlogSimples.Postagem.Infrastructure/bin/Debug/net10.0
 /BlogSimples.Postagem.Infrastructure/obj
+/BlogSimples.Notificacao/bin/Debug/net10.0
+/BlogSimples.Notificacao/obj
+/BlogSimplesNotificacaoCliente/.vs/BlogSimplesNotificacaoCliente.slnx/FileContentIndex
+/BlogSimplesNotificacaoCliente/bin/Debug/net10.0
+/BlogSimplesNotificacaoCliente/obj
