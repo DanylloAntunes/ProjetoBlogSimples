@@ -1,18 +1,44 @@
-version: '3.9'
+version: "3.9"
 
 services:
-  postgres:
+  api:
+    image: blogsimples
+    container_name: blogsimples-api
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      ASPNETCORE_URLS: http://+:8080
+      ConnectionStrings__Default: Host=db;Port=5432;Database=blogdb;Username=postgres;Password=postgres
+      Jwt__Key: "CHAVE_123_123_JWT_CHAVE_123_123_JWT"
+      Jwt__Issuer: "BlogSimples"
+      Jwt__Audience: "BlogSimplesUsers"
+      Jwt__ExpiresInMinutes: 10
+    depends_on:
+      - db
+    networks:
+      - blog-network
+
+  db:
     image: postgres:16-alpine
-    container_name: postgres_db
+    container_name: blogsimples-db
     restart: always
     environment:
+      POSTGRES_DB: blogdb
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: app_db
     ports:
       - "5432:5432"
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - blog-network
 
 volumes:
-  postgres_data:
+  postgres-data:
+
+networks:
+  blog-network:
